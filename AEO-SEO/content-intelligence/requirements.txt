@@ -1,0 +1,15 @@
+anthropic
+supabase
+python-dotenv
+scikit-learn
+numpy
+tiktoken
+pandas
+plotly
+streamlit>=1.45.0
+openai
+beautifulsoup4
+markdownify
+google-analytics-data
+google-api-python-client
+google-auth

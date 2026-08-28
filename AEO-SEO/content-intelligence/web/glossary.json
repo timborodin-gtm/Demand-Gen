@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Agentic commerce",
+    "url": "https://library.growth-memo.com/p/agentic-commerce",
+    "cat": "ai"
+  },
+  {
+    "name": "Agentic commerce protocols (ACP, UCP)",
+    "url": "https://library.growth-memo.com/p/agentic-commerce-protocols-acp-ucp",
+    "cat": "seo"
+  },
+  {
+    "name": "AI citation (also referred to as a brand citation)",
+    "url": "https://library.growth-memo.com/p/ai-citation-brand-citation",
+    "cat": "ai"
+  },
+  {
+    "name": "AI mention (also referred to as brand mention)",
+    "url": "https://library.growth-memo.com/p/ai-mentions-brand-mentions",
+    "cat": "ai"
+  },
+  {
+    "name": "AI tokens",
+    "url": "https://library.growth-memo.com/p/ai-tokens",
+    "cat": "foundations"
+  },
+  {
+    "name": "Answer Engine",
+    "url": "https://library.growth-memo.com/p/answer-engine",
+    "cat": "ai"
+  },
+  {
+    "name": "Are LLMs and NLPs the same?",
+    "url": "https://library.growth-memo.com/p/are-llms-and-nlps-the-same",
+    "cat": "foundations"
+  },
+  {
+    "name": "Astroturfing",
+    "url": "https://library.growth-memo.com/p/astroturfing",
+    "cat": "behavior"
+  },
+  {
+    "name": "Authorpic",
+    "url": "https://library.growth-memo.com/p/authorpic",
+    "cat": "seo"
+  },
+  {
+    "name": "Brand prominence",
+    "url": "https://library.growth-memo.com/p/brand-prominence",
+    "cat": "ai"
+  },
+  {
+    "name": "Chunking",
+    "url": "https://library.growth-memo.com/p/chunking",
+    "cat": "ai"
+  },
+  {
+    "name": "Citation Rate",
+    "url": "https://library.growth-memo.com/p/citation-rate",
+    "cat": "ai"
+  },
+  {
+    "name": "Crawl logs",
+    "url": "https://library.growth-memo.com/p/crawl-logs",
+    "cat": "seo"
+  },
+  {
+    "name": "Data corpus",
+    "url": "https://library.growth-memo.com/p/data-corpus",
+    "cat": "foundations"
+  },
+  {
+    "name": "Digital PR",
+    "url": "https://library.growth-memo.com/p/digital-pr",
+    "cat": "seo"
+  },
+  {
+    "name": "Embedding similarity thresholds",
+    "url": "https://library.growth-memo.com/p/embedding-similarity-thresholds",
+    "cat": "ai"
+  },
+  {
+    "name": "Entity score",
+    "url": "https://library.growth-memo.com/p/entity-score",
+    "cat": "ai"
+  },
+  {
+    "name": "First-click behavior",
+    "url": "https://library.growth-memo.com/p/first-click-behavior",
+    "cat": "behavior"
+  },
+  {
+    "name": "Generative AI Search",
+    "url": "https://library.growth-memo.com/p/generative-ai-search",
+    "cat": "ai"
+  },
+  {
+    "name": "Generator",
+    "url": "https://library.growth-memo.com/p/generator",
+    "cat": "ai"
+  },
+  {
+    "name": "Ghost citation",
+    "url": "https://library.growth-memo.com/p/ghost-citation",
+    "cat": "ai"
+  },
+  {
+    "name": "Google Bard",
+    "url": "https://library.growth-memo.com/p/google-bard",
+    "cat": "ai"
+  },
+  {
+    "name": "Google SGE (Search Generative Experience)",
+    "url": "https://library.growth-memo.com/p/google-sge",
+    "cat": "ai"
+  },
+  {
+    "name": "Hallucination",
+    "url": "https://library.growth-memo.com/p/hallucination",
+    "cat": "ai"
+  },
+  {
+    "name": "Human test-retest consistency",
+    "url": "https://library.growth-memo.com/p/human-test-retest-consistency",
+    "cat": "ai"
+  },
+  {
+    "name": "Inventory indexation",
+    "url": "https://library.growth-memo.com/p/inventory-indexation",
+    "cat": "seo"
+  },
+  {
+    "name": "Marketplace SEO",
+    "url": "https://library.growth-memo.com/p/marketplace-seo",
+    "cat": "seo"
+  },
+  {
+    "name": "Microsoft Prometheus",
+    "url": "https://library.growth-memo.com/p/microsoft-prometheus",
+    "cat": "ai"
+  },
+  {
+    "name": "Open source Large Language Model (LLM)",
+    "url": "https://library.growth-memo.com/p/open-source-large-language-model-llm",
+    "cat": "ai"
+  },
+  {
+    "name": "Open weight large language model (LLM)",
+    "url": "https://library.growth-memo.com/p/open-weight-large-language-model-llm",
+    "cat": "ai"
+  },
+  {
+    "name": "Programmatic SEO",
+    "url": "https://library.growth-memo.com/p/programmatic-seo",
+    "cat": "seo"
+  },
+  {
+    "name": "Query fan-out",
+    "url": "https://library.growth-memo.com/p/query-fan-out",
+    "cat": "ai"
+  },
+  {
+    "name": "Retriever",
+    "url": "https://library.growth-memo.com/p/retriever",
+    "cat": "ai"
+  },
+  {
+    "name": "Semantic similarity",
+    "url": "https://library.growth-memo.com/p/semantic-similarity",
+    "cat": "ai"
+  },
+  {
+    "name": "Semantically aligned language",
+    "url": "https://library.growth-memo.com/p/semantically-aligned-language",
+    "cat": "ai"
+  },
+  {
+    "name": "SEO persona",
+    "url": "https://library.growth-memo.com/p/seo-persona",
+    "cat": "seo"
+  },
+  {
+    "name": "Synthetic personas",
+    "url": "https://library.growth-memo.com/p/synthetic-personas",
+    "cat": "ai"
+  },
+  {
+    "name": "Top-k retrieval",
+    "url": "https://library.growth-memo.com/p/top-k-retrieval",
+    "cat": "ai"
+  },
+  {
+    "name": "Training data",
+    "url": "https://library.growth-memo.com/p/training-data",
+    "cat": "foundations"
+  },
+  {
+    "name": "Turn 1",
+    "url": "https://library.growth-memo.com/p/turn-1",
+    "cat": "ai"
+  },
+  {
+    "name": "Validation click",
+    "url": "https://library.growth-memo.com/p/validation-click",
+    "cat": "behavior"
+  },
+  {
+    "name": "Vector (embedding)",
+    "url": "https://library.growth-memo.com/p/vector-embedding",
+    "cat": "ai"
+  },
+  {
+    "name": "Vector database",
+    "url": "https://library.growth-memo.com/p/vector-database",
+    "cat": "ai"
+  },
+  {
+    "name": "Vectorization",
+    "url": "https://library.growth-memo.com/p/vectorization",
+    "cat": "ai"
+  },
+  {
+    "name": "What is Answer Engine Optimization?",
+    "url": "https://library.growth-memo.com/p/what-is-answer-engine-optimization",
+    "cat": "ai"
+  }
+]

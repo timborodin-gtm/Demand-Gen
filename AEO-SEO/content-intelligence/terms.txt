@@ -1,0 +1,60 @@
+topical relevance
+delphic cost of search
+vectors
+factual grounding
+content consensus
+crawl logs
+logistic regression
+LLM leaderboards
+NEG SEO
+neural network
+entity score
+micro-semantic
+query relevance
+user intent alignment
+SEO RFP
+sources of consensus
+data corpus
+microagents
+refiners
+answer engine
+neural IR
+vector model
+digital PR
+brand lift
+authorpic
+relevance engineering
+static pretrained LLMs
+retrieval augmented gen LLMs
+SEO AI agents
+LLM experience gain
+PR SEO
+classic SEO
+time to value
+algospeak
+LLMs
+NLPs
+Are LLMs and NLPs the same
+Retrieval Surface Optimization
+Brand prominence
+LLM citations
+Generative AI in Search
+First-click behavior
+Scroll depth
+Google perspectives
+Information density
+Traffic cannibalization
+Query share
+Query universe
+SERP coverage
+Traffic per query
+Ranking overlap
+Visibility overlap
+Topic graph
+zero volume search queries
+long-tail queries
+SEO moat
+Marketplace SEO
+Supply and demand (in SEO context)
+Inventory indexation
+User-generated content (UGC)

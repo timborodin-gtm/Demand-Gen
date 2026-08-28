@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth Memo Glossary</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #0a0a0a;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --hover-bg: #f7f7f5;
+      --radius: 10px;
+
+      --cat-ai: #1e40af;
+      --cat-ai-bg: #dbeafe;
+      --cat-seo: #166534;
+      --cat-seo-bg: #dcfce7;
+      --cat-behavior: #9a3412;
+      --cat-behavior-bg: #ffedd5;
+      --cat-foundations: #6b21a8;
+      --cat-foundations-bg: #f3e8ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    .header h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+      line-height: 1.05;
+    }
+
+    .header p {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 40px;
+      max-width: 640px;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+      margin: 0 -32px 24px;
+      padding-left: 32px;
+      padding-right: 32px;
+      z-index: 10;
+    }
+
+    .toolbar-inner {
+      max-width: 1016px;
+      margin: 0 auto;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search {
+      flex: 1 1 240px;
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 12px 16px 12px 42px;
+      font-size: 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fafaf9;
+      color: var(--ink);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .search input:focus {
+      border-color: var(--ink);
+      background: #fff;
+    }
+
+    .search svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .letter-nav {
+      display: flex;
+      gap: 2px;
+      flex-wrap: wrap;
+    }
+
+    .letter-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.12s;
+    }
+
+    .letter-nav a:hover {
+      background: var(--hover-bg);
+    }
+
+    .letter-nav a.disabled {
+      color: #d1d5db;
+      pointer-events: none;
+    }
+
+    .count {
+      color: var(--muted);
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.12s, border-color 0.12s;
+    }
+
+    .filter-chip:hover {
+      background: var(--hover-bg);
+    }
+
+    .filter-chip[aria-pressed="true"] {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .filter-chip .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .group {
+      margin-bottom: 40px;
+      scroll-margin-top: 120px;
+    }
+
+    .group-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 16px;
+    }
+
+    .group-letter {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .group-meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .terms {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 4px;
+    }
+
+    .term {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-radius: 8px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: background 0.12s;
+      border: 1px solid transparent;
+      gap: 12px;
+    }
+
+    .term:hover {
+      background: var(--hover-bg);
+      border-color: var(--line);
+    }
+
+    .term-name {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cat-tag {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .cat-ai {
+      color: var(--cat-ai);
+      background: var(--cat-ai-bg);
+    }
+
+    .cat-seo {
+      color: var(--cat-seo);
+      background: var(--cat-seo-bg);
+    }
+
+    .cat-behavior {
+      color: var(--cat-behavior);
+      background: var(--cat-behavior-bg);
+    }
+
+    .cat-foundations {
+      color: var(--cat-foundations);
+      background: var(--cat-foundations-bg);
+    }
+
+    .empty {
+      padding: 48px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 32px 20px 64px;
+      }
+
+      .toolbar {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .letter-nav a {
+        width: 26px;
+        height: 26px;
+      }
+
+      .terms {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="header">
+      <h1>Growth Memo Glossary</h1>
+      <p>A library of marketing, SEO, AEO, and AI search terms used across the newsletter.</p>
+    </div>
+
+    <div class="toolbar">
+      <div class="toolbar-inner">
+        <div class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <input id="searchInput" type="search" placeholder="Search the glossary" autocomplete="off" spellcheck="false">
+        </div>
+        <nav class="letter-nav" id="letterNav" aria-label="Jump to letter"></nav>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+
+    <div class="filters" id="filters"></div>
+
+    <div id="results"></div>
+
+  </div>
+
+  <script>
+  // Category chips. `id` is the internal key used by each term's `cat`;
+  // it maps to a beehiiv content tag as noted below. Label/color are display only.
+  //   ai          <- beehiiv tag "AI Research"
+  //   seo         <- beehiiv tag "SEO"
+  //   behavior    <- beehiiv tag "Behavior"
+  //   foundations <- beehiiv tag "Foundations"
+  const CATEGORIES = [
+    { id: "ai",          label: "AI Search",   class: "cat-ai",          color: "#1e40af" },
+    { id: "seo",         label: "SEO",         class: "cat-seo",         color: "#166534" },
+    { id: "behavior",    label: "Behavior",    class: "cat-behavior",    color: "#9a3412" },
+    { id: "foundations", label: "Foundations", class: "cat-foundations", color: "#6b21a8" }
+  ];
+
+  // Glossary data URL. glossary.json is rebuilt from the published beehiiv
+  // posts by a scheduled GitHub Action (.github/workflows/update-glossary.yml)
+  // and served from the repo via the jsDelivr CDN. The page loads it at
+  // runtime, so publishing a new post updates this page automatically with no
+  // edits here.
+  const GLOSSARY_JSON_URL = "https://cdn.jsdelivr.net/gh/k-indig/content-intelligence@master/web/glossary.json";
+
+  // Offline fallback, used only if the fetch above fails. Snapshot of the
+  // terms at last edit; the live list comes from GLOSSARY_JSON_URL.
+  const FALLBACK_TERMS = [
+    { name: "Answer Engine",                            url: "https://library.growth-memo.com/p/answer-engine",                       cat: "ai" },
+    { name: "Are LLMs and NLPs the same?",              url: "https://library.growth-memo.com/p/are-llms-and-nlps-the-same",          cat: "foundations" },
+    { name: "Astroturfing",                             url: "https://library.growth-memo.com/p/astroturfing",                        cat: "behavior" },
+    { name: "Authorpic",                                url: "https://library.growth-memo.com/p/authorpic",                           cat: "seo" },
+    { name: "Brand prominence",                         url: "https://library.growth-memo.com/p/brand-prominence",                    cat: "ai" },
+    { name: "Chunking",                                 url: "https://library.growth-memo.com/p/chunking",                            cat: "ai" },
+    { name: "Citation Rate",                            url: "https://library.growth-memo.com/p/citation-rate",                       cat: "ai" },
+    { name: "Crawl logs",                               url: "https://library.growth-memo.com/p/crawl-logs",                          cat: "seo" },
+    { name: "Data corpus",                              url: "https://library.growth-memo.com/p/data-corpus",                         cat: "foundations" },
+    { name: "Digital PR",                               url: "https://library.growth-memo.com/p/digital-pr",                          cat: "seo" },
+    { name: "Embedding similarity thresholds",          url: "https://library.growth-memo.com/p/embedding-similarity-thresholds",     cat: "ai" },
+    { name: "Entity score",                             url: "https://library.growth-memo.com/p/entity-score",                        cat: "ai" },
+    { name: "First-click behavior",                     url: "https://library.growth-memo.com/p/first-click-behavior",                cat: "behavior" },
+    { name: "Generative AI Search",                     url: "https://library.growth-memo.com/p/generative-ai-search",                cat: "ai" },
+    { name: "Generator",                                url: "https://library.growth-memo.com/p/generator",                           cat: "ai" },
+    { name: "Google Bard",                              url: "https://library.growth-memo.com/p/google-bard",                         cat: "ai" },
+    { name: "Google SGE (Search Generative Experience)", url: "https://library.growth-memo.com/p/google-sge",                         cat: "ai" },
+    { name: "Hallucination",                            url: "https://library.growth-memo.com/p/hallucination",                       cat: "ai" },
+    { name: "Human test-retest consistency",            url: "https://library.growth-memo.com/p/human-test-retest-consistency",       cat: "ai" },
+    { name: "Microsoft Prometheus",                     url: "https://library.growth-memo.com/p/microsoft-prometheus",                cat: "ai" },
+    { name: "Programmatic SEO",                         url: "https://library.growth-memo.com/p/programmatic-seo",                    cat: "seo" },
+    { name: "Query fan-out",                            url: "https://library.growth-memo.com/p/query-fan-out",                       cat: "ai" },
+    { name: "Retriever",                                url: "https://library.growth-memo.com/p/retriever",                           cat: "ai" },
+    { name: "Semantic similarity",                      url: "https://library.growth-memo.com/p/semantic-similarity",                 cat: "ai" },
+    { name: "Semantically aligned language",            url: "https://library.growth-memo.com/p/semantically-aligned-language",       cat: "ai" },
+    { name: "SEO persona",                              url: "https://library.growth-memo.com/p/seo-persona",                         cat: "seo" },
+    { name: "Synthetic personas",                       url: "https://library.growth-memo.com/p/synthetic-personas",                  cat: "ai" },
+    { name: "Top-k retrieval",                          url: "https://library.growth-memo.com/p/top-k-retrieval",                     cat: "ai" },
+    { name: "Training data",                            url: "https://library.growth-memo.com/p/training-data",                       cat: "foundations" },
+    { name: "Turn 1",                                   url: "https://library.growth-memo.com/p/turn-1",                              cat: "ai" },
+    { name: "Validation click",                         url: "https://library.growth-memo.com/p/validation-click",                    cat: "behavior" },
+    { name: "Vector (embedding)",                       url: "https://library.growth-memo.com/p/vector-embedding",                    cat: "ai" },
+    { name: "Vector database",                          url: "https://library.growth-memo.com/p/vector-database",                     cat: "ai" },
+    { name: "Vectorization",                            url: "https://library.growth-memo.com/p/vectorization",                       cat: "ai" },
+    { name: "What is Answer Engine Optimization?",      url: "https://library.growth-memo.com/p/what-is-answer-engine-optimization",  cat: "ai" }
+  ];
+
+  // `terms` starts as the fallback and is replaced by the fetched list on load.
+  let terms = FALLBACK_TERMS.slice();
+
+  const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  let activeCat = "all";
+  let activeQuery = "";
+
+  function catMeta(id) { return CATEGORIES.find(c => c.id === id); }
+
+  function firstLetter(name) {
+    const c = name.trim()[0];
+    return /[A-Za-z]/.test(c) ? c.toUpperCase() : "#";
+  }
+
+  function renderFilters() {
+    const root = document.getElementById("filters");
+    const chips = [
+      `<button class="filter-chip" data-cat="all" aria-pressed="${activeCat === "all"}">All</button>`
+    ].concat(CATEGORIES.map(c => `
+      <button class="filter-chip" data-cat="${c.id}" aria-pressed="${activeCat === c.id}">
+        <span class="dot" style="background:${c.color}"></span>${c.label}
+      </button>
+    `));
+    root.innerHTML = chips.join("");
+    root.querySelectorAll(".filter-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeCat = btn.dataset.cat;
+        render();
+      });
+    });
+  }
+
+  function render() {
+    const f = activeQuery.trim().toLowerCase();
+    let filtered = terms.slice();
+    if (activeCat !== "all") filtered = filtered.filter(t => t.cat === activeCat);
+    if (f) filtered = filtered.filter(t => t.name.toLowerCase().includes(f));
+    filtered.sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base" }));
+
+    const grouped = {};
+    filtered.forEach(t => {
+      const L = firstLetter(t.name);
+      (grouped[L] = grouped[L] || []).push(t);
+    });
+
+    document.getElementById("letterNav").innerHTML = ALPHABET.map(L => {
+      const has = grouped[L];
+      return `<a href="#letter-${L}" class="${has ? "" : "disabled"}">${L}</a>`;
+    }).join("");
+
+    document.getElementById("count").textContent = `${filtered.length} ${filtered.length === 1 ? "term" : "terms"}`;
+
+    document.querySelectorAll(".filter-chip").forEach(btn => {
+      btn.setAttribute("aria-pressed", btn.dataset.cat === activeCat);
+    });
+
+    const results = document.getElementById("results");
+    if (!filtered.length) {
+      results.innerHTML = `<div class="empty">No terms match your filters.</div>`;
+      return;
+    }
+
+    results.innerHTML = Object.keys(grouped).sort().map(L => `
+      <section class="group" id="letter-${L}">
+        <header class="group-header">
+          <div class="group-letter">${L}</div>
+          <div class="group-meta">${grouped[L].length} ${grouped[L].length === 1 ? "term" : "terms"}</div>
+        </header>
+        <div class="terms">
+          ${grouped[L].map(t => {
+            const c = catMeta(t.cat);
+            const tag = c ? `<span class="cat-tag ${c.class}">${c.label}</span>` : "";
+            return `<a class="term" target="_top" href="${t.url}"><span class="term-name">${escapeHtml(t.name)}</span>${tag}</a>`;
+          }).join("")}
+        </div>
+      </section>
+    `).join("");
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, c => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+    }[c]));
+  }
+
+  function scrollToElement(el) {
+  try {
+    if (window.parent === window || !window.frameElement) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    const frameRect = window.frameElement.getBoundingClientRect();
+    const elementRect = el.getBoundingClientRect();
+    const parentScrollY = window.parent.scrollY || window.parent.pageYOffset || 0;
+    const targetY = parentScrollY + frameRect.top + elementRect.top - 20;
+    window.parent.scrollTo({ top: targetY, behavior: "smooth" });
+  } catch (e) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+document.getElementById("letterNav").addEventListener("click", e => {
+  const a = e.target.closest("a");
+  if (!a || a.classList.contains("disabled")) return;
+  e.preventDefault();
+  const id = a.getAttribute("href").slice(1);
+  const el = document.getElementById(id);
+  if (el) scrollToElement(el);
+});
+
+const searchEl = document.getElementById("searchInput");
+  function handleSearch() {
+    activeQuery = searchEl.value;
+    render();
+  }
+  searchEl.addEventListener("input", handleSearch);
+  searchEl.addEventListener("keyup", handleSearch);
+  searchEl.addEventListener("change", handleSearch);
+  searchEl.oninput = handleSearch;
+
+  async function init() {
+    try {
+      const res = await fetch(GLOSSARY_JSON_URL, { cache: "no-cache" });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length) terms = data;
+      }
+    } catch (e) {
+      // Network/CDN hiccup — fall back to the embedded snapshot.
+    }
+    renderFilters();
+    render();
+  }
+
+  init();
+  </script>
+
+</body>
+
+</html>

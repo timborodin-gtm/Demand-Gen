@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShipHero — WMS for 3PLs &amp; High-Volume Brands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1e2430; --ink:#3b4350; --blue:#2f6bff; --blue-soft:#eef4fc;
+    --line:#e6e9f0; --muted:#6b7280; --red:#ef5a47; --accent-soft:#fdeceb;
+    --bg:#f6f6f7; --white:#fff; --btn:#121418;
+    --hero-bg:#edf0fb;
+    --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --radius:18px; --shadow:0 20px 50px rgba(20,35,60,.08);
+    --max:1140px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--serif);color:var(--navy);margin:0 0 .4em;line-height:1.16;letter-spacing:0;font-weight:400}
+  h1{font-size:clamp(36px,5vw,58px);font-weight:400}
+  h2{font-size:clamp(30px,3.6vw,44px);font-weight:400}
+  h3{font-size:24px;font-weight:500}
+  p{margin:0 0 1em}
+  a{color:var(--blue);text-decoration:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:999px;margin-bottom:18px}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);flex:0 0 8px}
+  .center{text-align:center}
+  .mw-940{max-width:940px;margin-left:auto;margin-right:auto}
+  .mw-771{max-width:771px;margin-left:auto;margin-right:auto}
+  .mw-760{max-width:760px;margin-left:auto;margin-right:auto}
+  .muted{color:var(--muted)}
+  .btn{display:inline-block;background:var(--btn);color:#fff;font-weight:600;font-size:16px;padding:15px 30px;border-radius:7px;border:0;cursor:pointer;transition:transform .15s ease, opacity .15s ease}
+  .btn:hover{transform:translateY(-1px);opacity:.92}
+  .btn.is--nav{background:var(--btn);box-shadow:none;padding:11px 22px;font-size:14px;border-radius:7px}
+  .btn.is--nav:hover{opacity:.9}
+  .btn-sub{font-size:13.5px;color:var(--muted);margin-top:12px;font-weight:600}
+  .sub-foot{font-size:11.5px;color:#9aa4b2;margin-top:6px}
+  section{padding:84px 0}
+  .lead{font-size:19px;color:var(--muted)}
+
+  /* NAV */
+  nav.bar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+  .logo{font-family:var(--sans);font-weight:800;font-size:22px;color:var(--navy);letter-spacing:-.02em}
+  .logo span{color:var(--red)}
+
+  /* HERO */
+  .hero{padding-top:64px;padding-bottom:64px;background:var(--hero-bg)}
+  .hero .wrap.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;text-align:left}
+  .hero .eyebrow{display:inline-block;margin:0 0 18px}
+  .hero h1{margin-bottom:.32em}
+  .hero-sub{font-size:20px;color:var(--muted);margin-bottom:28px}
+  .hero-bullets{display:flex;flex-direction:column;gap:13px;margin:0 0 30px;padding:0}
+  .hero-bullets li{list-style:none;display:flex;align-items:flex-start;gap:10px;font-weight:600;color:var(--ink);font-size:16px;text-align:left}
+  .tick{flex:0 0 16px;width:16px;height:16px;background:transparent;position:relative;margin-top:2px}
+  .tick::after{content:"";position:absolute;left:5px;top:0;width:6px;height:11px;border:solid var(--red);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+  .cta-stack{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:0}
+  .video-frame{width:100%;margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);aspect-ratio:16/9;background:#0b1828}
+  .video-frame iframe{width:100%;height:100%;display:block;border:0}
+
+  /* TRUST */
+  .trust{padding:44px 0 30px}
+  .small-title{text-align:center;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+  .logos{display:flex;flex-wrap:wrap;gap:30px 48px;justify-content:center;align-items:center;opacity:.8;margin-bottom:40px}
+  .logo-chip{height:30px;min-width:96px;border-radius:7px;background:#eef2f7;display:flex;align-items:center;justify-content:center;color:#9aa4b2;font-weight:700;font-size:13px;padding:0 14px}
+  .reviews{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+  .review{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;min-width:180px}
+  .stars{color:#f5a623;font-size:15px;letter-spacing:1px}
+  .review b{color:var(--navy);font-size:14px}
+  .review small{display:block;color:var(--muted);font-size:12px;font-weight:600}
+
+  /* FEATURES */
+  .features{background:#fff}
+  .head{max-width:789px;margin:0 auto 54px;text-align:center}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  /* Horizontal feature rows */
+  .feature-rows{display:flex;flex-direction:column;gap:22px}
+  .feature-rows .card{flex-direction:row;align-items:stretch;min-height:248px}
+  .feature-rows .card:nth-child(even){flex-direction:row-reverse}
+  .feature-rows .card-media{aspect-ratio:auto;flex:0 0 38%;max-width:420px;min-height:100%}
+  .feature-rows .card-body{flex:1;justify-content:center;padding:36px 40px}
+  .feature-rows .stat{margin-top:16px;padding-top:0}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:0;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .card-media{position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:var(--blue-soft);background-image:linear-gradient(0deg,rgba(47,107,255,.06),rgba(47,107,255,.06)),repeating-linear-gradient(45deg,rgba(47,107,255,.05) 0 1px,transparent 1px 22px),repeating-linear-gradient(-45deg,rgba(47,107,255,.05) 0 1px,transparent 1px 22px)}
+  .card-media .ic{font-size:58px;line-height:1;filter:drop-shadow(0 8px 16px rgba(30,60,120,.16))}
+  .card-media .gif-badge{position:absolute;top:14px;right:14px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--navy);background:#fff;padding:6px 11px;border-radius:999px;box-shadow:0 6px 16px rgba(20,35,60,.12);display:inline-flex;align-items:center;gap:6px}
+  .card-media .gif-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red)}
+  .card-media .cap{position:absolute;left:14px;bottom:12px;right:14px;font-size:11px;line-height:1.3;color:var(--muted);font-weight:600}
+  .card-body{padding:30px;display:flex;flex-direction:column;flex:1}
+  .card .eyebrow{margin-bottom:14px}
+  .card h3{margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15.5px}
+  .stat{display:inline-flex;align-items:baseline;gap:10px;align-self:flex-start;background:var(--accent-soft);border-radius:10px;padding:10px 16px;margin-top:18px;flex-wrap:wrap;max-width:100%;line-height:1}
+  .stat .num{color:var(--red);font-family:var(--sans);font-weight:800;font-size:20px;line-height:1;white-space:nowrap}
+  .stat .lab{color:var(--muted);font-size:13px;font-weight:600;line-height:1}
+  .stat.is-text{align-items:center}
+  .stat.is-text .num{font-size:14px;font-weight:700;letter-spacing:.2px;white-space:normal;line-height:1.2}
+  .stat.is-text .lab{line-height:1.2}
+  .more{display:inline-block;align-self:flex-start;margin-top:16px;background:var(--btn);color:#fff;font-weight:600;font-size:14px;padding:10px 18px;border-radius:7px}
+
+  /* PROOF band */
+  .proof{background:var(--bg);color:var(--navy)}
+  .proof h2{color:var(--navy)}
+  .proof-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:44px}
+  .proof-item{text-align:center;padding:18px 10px;border-right:1px solid var(--line)}
+  .proof-item:last-child{border-right:0}
+  .proof-item .n{font-family:var(--sans);font-size:38px;font-weight:800;line-height:1;color:var(--blue)}
+  .proof-item .t{font-size:13.5px;color:var(--muted);margin-top:8px;font-weight:600}
+
+  /* COMPARISON */
+  .comparison-wrap{overflow-x:auto;margin-top:40px}
+  .comparison-table{display:grid;grid-template-columns:2.3fr repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-width:820px}
+  .ch{min-height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;font-size:15px;font-weight:700;color:var(--muted);border-bottom:1px solid var(--line);text-align:center;background:#fbfcfe}
+  .ch.hero-col{background:var(--blue-soft);color:#333}
+  .ch.hero-col span{margin-top:8px;font-size:11px;letter-spacing:2px;color:var(--red)}
+  .feat,.cell{min-height:50px;display:flex;align-items:center;border-bottom:1px solid var(--line);font-size:15.5px}
+  .feat{padding:0 22px;color:var(--ink);font-weight:600}
+  .cell{justify-content:center}
+  .cell.hl{background:var(--blue-soft)}
+  .ck{width:15px;height:15px;position:relative}
+  .ck::after{content:"";position:absolute;left:5px;top:0;width:6px;height:11px;border:solid var(--red);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+  .x{color:#c5d2e8;font-size:26px;font-weight:300}
+  .dash{color:#c5d2e8;font-size:22px;font-weight:600}
+  .comparison-table > *:nth-last-child(-n+5){border-bottom:none}
+
+  /* TESTIMONIALS */
+  .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:46px}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+  .quote .mark{font-size:48px;color:#cdddf2;line-height:.6;font-weight:800}
+  .quote blockquote{margin:6px 0 20px;font-size:23px;font-weight:700;color:var(--navy);line-height:1.25}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+  .who b{display:block;color:var(--ink);font-size:15px}
+  .who small{color:var(--muted)}
+  .who .watch{margin-left:auto;font-weight:700;font-size:13.5px}
+
+  /* INTEGRATIONS */
+  .integ{background:var(--bg)}
+  .marquee{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:40px 0 18px}
+
+  /* CTA / FORM */
+  .cta{background:#fff}
+  .cta .grid-cta{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .cta-panel{background:linear-gradient(155deg,#ef5a47 0%, #f2895c 100%);color:#fff;padding:48px 44px}
+  .cta-panel h2{color:#fff}
+  .cta .lead{color:rgba(255,255,255,.92)}
+  .cta-bullets{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+  .cta-bullets li{display:flex;gap:11px;align-items:flex-start;font-weight:600;font-size:16px;color:#fff}
+  .cta-bullets .tick{background:transparent}
+  .cta-bullets .tick::after{border-color:#fff}
+  .badge{margin-top:26px;font-size:13px;font-weight:700;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);padding:10px 16px;border-radius:10px;display:inline-block}
+  .formcard{background:#fff;padding:44px}
+  .formcard h3{font-size:26px;margin-bottom:18px}
+  .formcard label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin:0 0 6px}
+  .formcard input,.formcard select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;margin-bottom:16px;background:#f4f7fd;color:var(--ink)}
+  .formcard .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .formcard .btn{width:100%;text-align:center;background:var(--blue)}
+  .formnote{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+
+  /* FOOTER */
+  footer{background:#08172c;color:#8fa0b6;padding:40px 0;font-size:13px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;justify-content:space-between}
+  footer a{color:#9fb1c8}
+
+
+  @media(max-width:860px){
+    .grid2,.tgrid,.cta .grid-cta{grid-template-columns:1fr}
+    .hero .wrap.hero-grid{grid-template-columns:1fr;gap:34px;text-align:left}
+    .hero{padding-top:48px}
+    .feature-rows .card,.feature-rows .card:nth-child(even){flex-direction:column;min-height:0}
+    .feature-rows .card-media{flex-basis:auto;max-width:none;aspect-ratio:16/9;min-height:0}
+    .feature-rows .card-body{padding:30px}
+    .proof-grid{grid-template-columns:repeat(2,1fr)}
+    .proof-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+    section{padding:60px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="bar">
+  <div class="wrap">
+    <div class="logo">Ship<span>Hero</span></div>
+    <a class="btn is--nav" href="#quote">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO (2-column: copy left, video right) -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <span class="eyebrow">Cut errors 30%. Ship 2x faster. Scale without hiring.</span>
+      <h1>WMS for 3PLs &amp; High-Volume Brands</h1>
+      <p class="hero-sub">The all-in-one WMS for 3PLs and high-volume brands, built to replace the spreadsheets, paper, and disconnected tools slowing you down. Trusted by warehouses shipping <strong>100M+</strong> orders a year, without the enterprise price tag.</p>
+
+      <ul class="hero-bullets">
+        <li><span class="tick"></span> Unlimited 3PL clients &amp; brands on one platform</li>
+        <li><span class="tick"></span> Automated 3PL billing &amp; self-serve client portals</li>
+        <li><span class="tick"></span> 99.9% pick accuracy, barcode-verified mobile picking</li>
+        <li><span class="tick"></span> 100+ integrations, EDI &amp; open API</li>
+        <li><span class="tick"></span> Live rate shopping with no per-label fees</li>
+        <li><span class="tick"></span> Live in 6–8 weeks, no long-term lock-in</li>
+      </ul>
+
+      <div class="cta-stack">
+        <a class="btn" href="#quote">Get a custom quote</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="video-frame">
+        <iframe src="https://player.vimeo.com/video/1129876175?controls=0&autoplay=1&loop=1&muted=1&background=1&playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="wrap">
+    <div class="small-title">Trusted by high-volume 3PLs and brands</div>
+    <div class="logos">
+      <div class="logo-chip">CUSTOMER</div><div class="logo-chip">CUSTOMER</div>
+      <div class="logo-chip">CUSTOMER</div><div class="logo-chip">CUSTOMER</div>
+      <div class="logo-chip">CUSTOMER</div><div class="logo-chip">CUSTOMER</div>
+    </div>
+    <div class="reviews">
+      <div class="review"><span class="stars">★★★★☆</span><div><b>Shopify</b><small>4.3 · 115 reviews</small></div></div>
+      <div class="review"><span class="stars">★★★★★</span><div><b>Trustpilot</b><small>4.5 · 608 reviews</small></div></div>
+      <div class="review"><span class="stars">★★★★☆</span><div><b>Capterra</b><small>4.2 · 83 reviews</small></div></div>
+      <div class="review"><span class="stars">★★★★☆</span><div><b>G2</b><small>4.4 · 181 reviews</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES (re-ranked by what wins & loses ICP deals — Won/Lost + call/notes analysis) -->
+<section class="features">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Features</span>
+      <h2>The capabilities that actually win deals</h2>
+      <p class="lead">Ordered by what matters most to high-volume 3PLs and brands, from running clients to shipping the last label.</p>
+    </div>
+
+    <div class="feature-rows">
+      <!-- 1. Multi-Client 3PL Ops (TOP won + top lost objection) -->
+      <div class="card" style="border-color:#bcd3f0">
+        <div class="card-media" style="--g1:#2a6fb0;--g2:#0B2545">
+          <span class="gif-badge">◍ ANIMATED GIF</span>
+          <span class="ic">🏢</span>
+          <span class="cap">GIF: switching between client dashboards → an invoice auto-generates</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+            <span class="eyebrow" style="margin-bottom:0">Multi-Client &amp; Billing</span>
+            <span style="font-size:11px;font-weight:800;letter-spacing:.5px;color:#fff;background:var(--red);padding:4px 10px;border-radius:999px">#1 REASON 3PLs SWITCH</span>
+          </div>
+          <h3>Run every client from one system</h3>
+          <p>Onboard unlimited clients, automate 3PL billing down to the action, and give each client a self-serve portal for inventory, orders, and tracking. No more spreadsheets, manual invoices, or "where's my order?" calls.</p>
+          <div class="stat"><div class="num">∞</div><div class="lab">clients on one platform, billed automatically</div></div>
+          <div class="more">See it in your quote →</div>
+        </div>
+      </div>
+
+      <!-- 2. Integrations / EDI / API -->
+      <div class="card">
+        <div class="card-media" style="--g1:#2a8aa8;--g2:#1E6091">
+          <span class="gif-badge">◍ ANIMATED GIF</span>
+          <span class="ic">🔌</span>
+          <span class="cap">GIF: Shopify, Amazon, NetSuite tiles connecting + a live sync pulse</span>
+        </div>
+        <div class="card-body">
+          <span class="eyebrow">Integrations, EDI &amp; API</span>
+          <h3>Connected to everything you sell on</h3>
+          <p>Native Shopify, Amazon, NetSuite, and TikTok Shop out of the box. Run wholesale EDI for Ulta, Target, and big-box retail, plus an open API and webhooks for anything custom you need.</p>
+          <div class="stat"><div class="num">100+</div><div class="lab">plug-and-play integrations &amp; open API</div></div>
+          <div class="more">See it in your quote →</div>
+        </div>
+      </div>
+
+      <!-- 3. Mobile scan pick & pack (accuracy) -->
+      <div class="card">
+        <div class="card-media" style="--g1:#2A7F47;--g2:#11405f">
+          <span class="gif-badge">◍ ANIMATED GIF</span>
+          <span class="ic">📱</span>
+          <span class="cap">GIF: handheld scans a barcode → green ✓ verification</span>
+        </div>
+        <div class="card-body">
+          <span class="eyebrow">Mobile Pick &amp; Pack</span>
+          <h3>Paperless, barcode-verified picking</h3>
+          <p>Replace paper pick lists with scan-verified mobile workflows. Every item is barcode-checked before it ships, so accuracy climbs and new pickers ramp on day one, across every client you run.</p>
+          <div class="stat"><div class="num">99.9%</div><div class="lab">pick accuracy</div></div>
+          <div class="more">See it in your quote →</div>
+        </div>
+      </div>
+
+      <!-- 4. Inventory control: lot/serial/expiration (lost-deal gap) -->
+      <div class="card">
+        <div class="card-media" style="--g1:#6A4D9E;--g2:#1E2f5e">
+          <span class="gif-badge">◍ ANIMATED GIF</span>
+          <span class="ic">📦</span>
+          <span class="cap">GIF: inventory counts update live with lot / serial tags</span>
+        </div>
+        <div class="card-body">
+          <span class="eyebrow">Inventory Control</span>
+          <h3>Inventory you can actually trust</h3>
+          <p>Real-time, SKU-level inventory with lot, serial, and expiration tracking plus mobile cycle counting. Built for supplements, food, and regulated brands where a count being off is not an option.</p>
+          <div class="stat is-text"><div class="num">Lot · Serial · FEFO</div><div class="lab">traceability built in</div></div>
+          <div class="more">See it in your quote →</div>
+        </div>
+      </div>
+
+      <!-- 5. Live rate shopping (margin from rates) -->
+      <div class="card">
+        <div class="card-media" style="--g1:#E07A1F;--g2:#a8431a">
+          <span class="gif-badge">◍ ANIMATED GIF</span>
+          <span class="ic">🏷️</span>
+          <span class="cap">GIF: carrier rates compared → cheapest label auto-selected</span>
+        </div>
+        <div class="card-body">
+          <span class="eyebrow">Live Rate Shopping</span>
+          <h3>Ship the cheapest label, always</h3>
+          <p>Automate your savings by comparing carrier options in real time, instantly selecting the most cost-effective label that hits your delivery promise. Bring your own carrier accounts and keep the margin.</p>
+          <div class="stat is-text"><div class="num">BYOC</div><div class="lab">no per-label fees, ever</div></div>
+          <div class="more">See it in your quote →</div>
+        </div>
+      </div>
+
+      <!-- 6. Throughput at scale: Pack-to-Light + Location-Aware Picking -->
+      <div class="card">
+        <div class="card-media" style="--g1:#0B2545;--g2:#1E6091">
+          <span class="gif-badge">◍ ANIMATED GIF</span>
+          <span class="ic">⚡</span>
+          <span class="cap">GIF: pack-to-light stations light up + a throughput meter rises</span>
+        </div>
+        <div class="card-body">
+          <span class="eyebrow">Built to Scale</span>
+          <h3>More throughput without more hires</h3>
+          <p>When volume spikes, Pack-to-Light stations and Location-Aware Picking route your team the fastest way through the warehouse. Scale output, not headcount, through your busiest seasons.</p>
+          <div class="stat"><div class="num">+450%</div><div class="lab">throughput at high-performance stations</div></div>
+          <div class="more">See it in your quote →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAND (PICK YOUR PROOF) -->
+<section class="proof">
+  <div class="wrap center">
+    <span class="eyebrow">Pick Your Proof</span>
+    <h2 class="mw-760">The numbers behind a warehouse that runs itself</h2>
+    <div class="proof-grid">
+      <div class="proof-item"><div class="n">100M+</div><div class="t">orders shipped a year</div></div>
+      <div class="proof-item"><div class="n">99.9%</div><div class="t">pick accuracy</div></div>
+      <div class="proof-item"><div class="n">+450%</div><div class="t">throughput at top stations</div></div>
+      <div class="proof-item"><div class="n">6–8 wks</div><div class="t">to go live</div></div>
+      <div class="proof-item"><div class="n">100+</div><div class="t">plug-and-play integrations</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SHIPHERO / COMPARISON -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Why ShipHero</span>
+      <h2>3PLs choose ShipHero over everything else.</h2>
+      <p class="lead mw-760">How a purpose-built 3PL platform stacks up against entry-level tools and legacy ERP systems.</p>
+    </div>
+
+    <div class="comparison-wrap">
+      <div class="comparison-table">
+        <div class="ch" style="background:#fbfcfe"></div>
+        <div class="ch hero-col"><strong style="color:#0B2545;font-size:16px">ShipHero</strong><span>BUILT FOR 3PLS</span></div>
+        <div class="ch">Entry-level WMS</div>
+        <div class="ch">Other WMS</div>
+        <div class="ch">Legacy / ERP</div>
+
+        <div class="feat">Purpose-built for 3PLs (multi-client)</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="x">×</span></div>
+
+        <div class="feat">Unlimited white-label client portals</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="x">×</span></div>
+
+        <div class="feat">Built-in 3PL billing</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="dash">–</span></div>
+
+        <div class="feat">Mobile barcode picking &amp; packing (99.9% accuracy)</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="ck"></span></div><div class="cell"><span class="dash">–</span></div>
+
+        <div class="feat">Light-guided hardware (Tap-to-Pack / Pack-to-Light)</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="x">×</span></div>
+
+        <div class="feat">AI Picking &amp; smart batching</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="x">×</span></div>
+
+        <div class="feat">100+ plug-&amp;-play integrations</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="ck"></span></div><div class="cell"><span class="dash">–</span></div>
+
+        <div class="feat">EDI &amp; open GraphQL API</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="ck"></span></div><div class="cell"><span class="ck"></span></div>
+
+        <div class="feat">Customizable automation rules</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="ck"></span></div><div class="cell"><span class="ck"></span></div>
+
+        <div class="feat">Advanced reporting &amp; analytics</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="ck"></span></div><div class="cell"><span class="ck"></span></div>
+
+        <div class="feat">Transparent pricing — no per-label fees, BYO carrier</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="ck"></span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="x">×</span></div>
+
+        <div class="feat">Fast implementation (live in weeks)</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="ck"></span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="x">×</span></div>
+
+        <div class="feat">Easy to use (mobile-first, ~5-min Shopify setup)</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="ck"></span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="x">×</span></div>
+
+        <div class="feat">Scales with unlimited clients, orders &amp; SKUs</div>
+        <div class="cell hl"><span class="ck"></span></div><div class="cell"><span class="x">×</span></div><div class="cell"><span class="dash">–</span></div><div class="cell"><span class="ck"></span></div>
+      </div>
+    </div>
+    <div class="center" style="margin-top:34px"><a class="btn" href="#quote">Request a quote</a></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--bg)">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Customer Stories</span>
+      <h2>Don't take our word for it</h2>
+    </div>
+    <div class="tgrid">
+      <div class="quote">
+        <div class="mark">“</div>
+        <blockquote>ShipHero is the Apple of shipping software.</blockquote>
+        <div class="who">
+          <div class="avatar">FB</div>
+          <div><b>Frost Buddy</b><small>High-volume DTC brand</small></div>
+          <a class="watch" href="https://www.youtube.com/watch?v=n5vjaKa7YqE" target="_blank">Watch ▶</a>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="mark">“</div>
+        <blockquote>ShipHero is a partner that wants to see us grow.</blockquote>
+        <div class="who">
+          <div class="avatar">FF</div>
+          <div><b>Frankly Fulfillment</b><small>3PL operator</small></div>
+          <a class="watch" href="https://www.youtube.com/watch?v=3m8FWoVjgmc" target="_blank">Watch ▶</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="integ">
+  <div class="wrap center">
+    <span class="eyebrow">Connected to your stack</span>
+    <h2>Works with the tools you already use</h2>
+    <p class="lead mw-760">Carts, marketplaces, carriers, and ERPs. ShipHero plugs into the tools your clients already run on.</p>
+    <div class="marquee">
+      <div class="logo-chip">Shopify</div><div class="logo-chip">Amazon</div><div class="logo-chip">TikTok Shop</div>
+      <div class="logo-chip">NetSuite</div><div class="logo-chip">UPS</div><div class="logo-chip">FedEx</div>
+      <div class="logo-chip">USPS</div><div class="logo-chip">QuickBooks</div><div class="logo-chip">Walmart</div>
+      <div class="logo-chip">eBay</div>
+    </div>
+    <p class="muted">…and 90+ more via the ShipHero API &amp; webhooks.</p>
+  </div>
+</section>
+
+<!-- CTA + FORM -->
+<section class="cta" id="quote">
+  <div class="wrap">
+    <div class="grid-cta">
+      <div class="cta-panel">
+        <h2>Get pricing and a migration plan built for your operation</h2>
+        <p class="lead">Tell us about your operation and we'll put together pricing and a migration plan tailored to you.</p>
+        <ul class="cta-bullets">
+          <li><span class="tick"></span> Custom pricing for your order volume</li>
+          <li><span class="tick"></span> Dedicated implementation team</li>
+          <li><span class="tick"></span> We migrate you from your current WMS</li>
+          <li><span class="tick"></span> No long-term lock-in</li>
+        </ul>
+        <div class="badge">Voted #1 3PL Software &amp; a Top WMS on G2 — Spring 2026 Reports</div>
+      </div>
+
+      <div class="formcard">
+        <h3>Request a Quote</h3>
+        <div class="row">
+          <div><label>First name</label><input type="text" placeholder="Jane"></div>
+          <div><label>Last name</label><input type="text" placeholder="Doe"></div>
+        </div>
+        <label>Work email</label><input type="email" placeholder="jane@company.com">
+        <label>Company</label><input type="text" placeholder="Your 3PL or brand">
+        <label>Monthly order volume</label>
+        <select><option>Under 5,000</option><option>5,000–25,000</option><option>25,000–100,000</option><option>100,000+</option></select>
+        <a class="btn" href="#">Get my custom quote</a>
+        <div class="formnote">No commitment · Live in 6–8 weeks* · We migrate your data</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>Copyright 2026 ShipHero</div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap">
+      <a href="#">Privacy Policy</a><a href="#">Cookie Policy</a><a href="#">Acceptable Use</a><a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

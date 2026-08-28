@@ -1,0 +1,2839 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShipHero StackAdapt ABM Display Banner Wireframes</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page-bg: #f5f7fb;
+      --text: #111827;
+      --muted: #596273;
+      --line: #d9dee8;
+      --panel: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.35;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 247, 249, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .topbar {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 18px 24px 14px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 0;
+    }
+    .summary {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .legend {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .legend span {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 5px 8px;
+      border-radius: 6px;
+    }
+    main {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .feature-section {
+      margin: 0 0 34px;
+      padding: 22px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .feature-head {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+    .feature-head h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    .feature-head a {
+      color: #1f5fbf;
+      font-size: 13px;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    .eyebrow {
+      margin: 0 0 4px;
+      color: #0f766e;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .brief {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0 0 18px;
+    }
+    .brief p {
+      margin: 0;
+      min-height: 76px;
+      padding: 10px 12px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .brief strong { color: var(--text); }
+    .variation-block { margin-top: 20px; }
+    .variation-title {
+      margin-bottom: 10px;
+      font-weight: 800;
+      color: #263041;
+      font-size: 14px;
+    }
+    .banner-grid {
+      display: grid;
+      grid-template-columns: repeat(8, max-content);
+      gap: 16px;
+      align-items: start;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .banner-shell {
+      margin: 0;
+      width: max-content;
+    }
+    .banner-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .banner-meta strong { color: #263041; }
+    .banner {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--ink);
+      border: 1px solid rgba(15, 23, 42, .32);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, .12);
+    }
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(105deg, rgba(255,255,255,.08), transparent 42%),
+        linear-gradient(0deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 52%);
+      pointer-events: none;
+    }
+    .brand {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 2;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .mark {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #07111f;
+      display: inline-grid;
+      place-items: center;
+      font-size: 11px;
+      line-height: 1;
+    }
+    .copy {
+      position: relative;
+      z-index: 2;
+    }
+    .copy h3 {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-weight: 900;
+      letter-spacing: 0;
+      line-height: 1.06;
+    }
+    .copy p {
+      margin: 7px 0 0;
+      max-width: 35em;
+      font-size: 12px;
+      line-height: 1.23;
+      color: rgba(248, 250, 252, .86);
+    }
+    .proof {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: color-mix(in srgb, var(--accent) 80%, white);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    button {
+      position: relative;
+      z-index: 2;
+      border: 0;
+      background: var(--accent);
+      color: #07111f;
+      font-weight: 800;
+      font-size: 12px;
+      border-radius: 4px;
+      padding: 8px 12px;
+      white-space: nowrap;
+    }
+    .leaderboard {
+      width: 728px;
+      height: 90px;
+      padding: 12px 136px 11px 124px;
+      display: grid;
+      align-items: center;
+    }
+    .leaderboard .brand { left: 18px; top: 16px; }
+    .leaderboard .proof { display: none; }
+    .leaderboard .copy h3 { font-size: 23px; }
+    .leaderboard .copy p { font-size: 11px; line-height: 1.18; margin-top: 3px; }
+    .leaderboard button {
+      position: absolute;
+      right: 18px;
+      top: 30px;
+    }
+    .medium-rectangle,
+    .large-rectangle,
+    .landscape-rectangle {
+      padding: 31px 21px 19px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    .medium-rectangle {
+      width: 300px;
+      height: 250px;
+    }
+    .large-rectangle {
+      width: 336px;
+      height: 280px;
+    }
+    .landscape-rectangle {
+      width: 480px;
+      height: 320px;
+      padding-inline: 42px;
+    }
+    .medium-rectangle .brand,
+    .large-rectangle .brand,
+    .landscape-rectangle .brand {
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .medium-rectangle .copy h3 { font-size: 27px; line-height: 1.08; }
+    .large-rectangle .copy h3 { font-size: 30px; line-height: 1.08; }
+    .landscape-rectangle .copy h3 { font-size: 32px; line-height: 1.1; }
+    .medium-rectangle button,
+    .large-rectangle button,
+    .landscape-rectangle button {
+      align-self: center;
+      margin-top: 15px;
+    }
+    .mobile-banner,
+    .mobile-leaderboard {
+      height: 50px;
+      padding: 7px 78px 7px 38px;
+      display: grid;
+      align-items: center;
+    }
+    .mobile-banner { width: 300px; }
+    .mobile-leaderboard { width: 320px; }
+    .mobile-banner .brand,
+    .mobile-leaderboard .brand {
+      left: 8px;
+      top: 17px;
+    }
+    .mobile-banner .brand span:last-child,
+    .mobile-leaderboard .brand span:last-child { display: none; }
+    .mobile-banner .copy h3,
+    .mobile-leaderboard .copy h3 {
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1;
+    }
+    .mobile-banner button,
+    .mobile-leaderboard button {
+      position: absolute;
+      right: 7px;
+      top: 11px;
+      font-size: 10px;
+      padding: 6px 7px;
+    }
+    .wide-skyscraper,
+    .half-page {
+      height: 600px;
+      padding: 56px 14px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .wide-skyscraper { width: 160px; }
+    .half-page {
+      width: 300px;
+      padding-inline: 26px;
+    }
+    .wide-skyscraper .brand,
+    .half-page .brand {
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .wide-skyscraper .copy h3 {
+      font-size: 25px;
+      line-height: 1.08;
+    }
+    .half-page .copy h3 {
+      font-size: 36px;
+      line-height: 1.08;
+    }
+    .wide-skyscraper .copy p {
+      font-size: 13px;
+      margin-top: 14px;
+    }
+    .half-page .copy p {
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    .wide-skyscraper button,
+    .half-page button {
+      align-self: center;
+      white-space: normal;
+    }
+    .wide-skyscraper button {
+      width: 122px;
+    }
+    .half-page button {
+      min-width: 132px;
+    }
+    @media (max-width: 900px) {
+      .topbar { align-items: start; flex-direction: column; }
+      .legend { justify-content: flex-start; }
+      main { padding: 18px; }
+      .feature-head { flex-direction: column; }
+      .brief { grid-template-columns: 1fr; }
+      .banner-grid { grid-template-columns: repeat(8, max-content); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div>
+        <h1>ShipHero StackAdapt ABM Display Banner Wireframes</h1>
+        <p class="summary">High-contrast mockups for 3PL executive ABM display: strongest selected copy for 21 WMS menu pages across 728 x 90, 300 x 600, 300 x 250, 480 x 320, 320 x 50, and 160 x 600.</p>
+      </div>
+      <div class="legend">
+        <span>Logo placeholder</span>
+        <span>WMS built for 3PLs cue</span>
+        <span>Low-friction CTA</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    
+    <section class="feature-section" id="order-management">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Order Management</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/orders-and-returns">/software/orders-and-returns</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Disconnected order tools, delayed channel sync, manual exception handling, and no single order truth.</p>
+        <p><strong>Page takeaway:</strong> 360 degree order and SKU data, simultaneous store sync, open API, order tracking, automation rules.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: SLA control</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Improve order control</h3>
+          <p>With Order Management, replace disconnected order tools.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve order SLA control</h3>
+          <p>With Order Management, replace disconnected order tools with one source of truth for SLAs and exceptions.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve order control</h3>
+          <p>With Order Management, replace disconnected order tools.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve order control</h3>
+          <p>With Order Management, replace disconnected order tools with one source of truth for SLAs and exceptions.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Order control</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve order SLA control</h3>
+          <p>With Order Management, replace disconnected order tools with one source of truth for SLAs and exceptions.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="inventory-management">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Inventory Management</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/inventory">/software/inventory</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Inventory drift, stockouts, overselling, and managers relying on spreadsheets instead of floor-level truth.</p>
+        <p><strong>Page takeaway:</strong> Stock Perfect: locations, replenishment, cycle counts, multi-warehouse allocation, kitting, serial tracking.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Inventory accuracy</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Improve stock accuracy</h3>
+          <p>With Inventory Management, improve stock accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve inventory accuracy</h3>
+          <p>With Inventory Management, improve stock accuracy before drift becomes client escalation.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve stock accuracy</h3>
+          <p>With Inventory Management, improve stock accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve stock accuracy</h3>
+          <p>With Inventory Management, improve stock accuracy before drift becomes client escalation.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>No oversells</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve inventory accuracy</h3>
+          <p>With Inventory Management, improve stock accuracy before drift becomes client escalation.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="returns-management">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Returns Management</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/returns-management">/software/returns-management</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Returns create messy receiving, unclear disposition, client questions, and inventory inaccuracies.</p>
+        <p><strong>Page takeaway:</strong> Returns can be a logistical nightmare; ShipHero sets rules for restock, destroy, and incoming return handling.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Return accuracy</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#07111f; --accent:#31c48d; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Reduce return errors</h3>
+          <p>With Returns Management, reduce return-driven stock drift.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#07111f; --accent:#31c48d; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Reduce return-driven stock errors</h3>
+          <p>With Returns Management, standardize disposition so returns do not create inventory drift or SLA fire drills.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#07111f; --accent:#31c48d; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Reduce return errors</h3>
+          <p>With Returns Management, reduce return-driven stock drift.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#07111f; --accent:#31c48d; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Reduce return errors</h3>
+          <p>With Returns Management, standardize disposition so returns do not create inventory drift or SLA fire drills.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#07111f; --accent:#31c48d; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Return control</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#07111f; --accent:#31c48d; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Reduce return-driven stock errors</h3>
+          <p>With Returns Management, standardize disposition so returns do not create inventory drift or SLA fire drills.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="picking-and-packing">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Picking &amp; Packing</h2>
+        </div>
+        <a href="https://www.shiphero.com/pick-and-pack">/pick-and-pack</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Labor is costly, pick paths waste time, training is hard, and packing errors eat margin.</p>
+        <p><strong>Page takeaway:</strong> Double your picks without an extra shift; optimized routes, batch modes, packing station synergy, AI packaging, weight discrepancy detection.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Labor efficiency</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Double picks. No extra shift</h3>
+          <p>With Pick &amp; Pack, reduce walking, errors, and labor waste.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Double picks without overtime</h3>
+          <p>With Pick &amp; Pack, reduce wasted walking and pack errors so the same team ships more orders.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Double picks. No extra shift</h3>
+          <p>With Pick &amp; Pack, reduce walking, errors, and labor waste.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Double picks. No extra shift</h3>
+          <p>With Pick &amp; Pack, reduce wasted walking and pack errors so the same team ships more orders.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Double picks</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Double picks without overtime</h3>
+          <p>With Pick &amp; Pack, reduce wasted walking and pack errors so the same team ships more orders.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="live-carrier-rate-shopping">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Live Carrier Rate Shopping</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/rate-shopping">/software/rate-shopping</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Packer-by-packer carrier decisions, rising postage, slow label choices, and hidden margin leakage.</p>
+        <p><strong>Page takeaway:</strong> Finds and prints the cheapest shipping label that gets orders to customers on time; no manual packer decisions.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Cost control</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>35% lower shipping costs</h3>
+          <p>With Rate Shopping, lower shipping costs by 35%.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Lower shipping costs by 35%</h3>
+          <p>With Rate Shopping, lower shipping costs by 35% without slowing packout or leaving carrier choice to guesswork.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>35% lower shipping costs</h3>
+          <p>With Rate Shopping, lower shipping costs by 35%.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>35% lower shipping costs</h3>
+          <p>With Rate Shopping, lower shipping costs by 35% without slowing packout or leaving carrier choice to guesswork.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Lower costs</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Lower shipping costs by 35%</h3>
+          <p>With Rate Shopping, lower shipping costs by 35% without slowing packout or leaving carrier choice to guesswork.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="posthero">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>PostHero</h2>
+        </div>
+        <a href="https://www.shiphero.com/posthero">/posthero</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> 3PLs lose visibility after handoff, struggle to explain carrier delays, and lack proof for client conversations.</p>
+        <p><strong>Page takeaway:</strong> Post-shipment dashboard tracks outgoing orders, carrier performance, delays, fulfillment gaps, destination and date reports.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: SLA visibility</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Catch delivery delays</h3>
+          <p>With PostHero, catch carrier delays before clients escalate.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Catch delivery delays sooner</h3>
+          <p>With PostHero, spot carrier delays and stuck shipments before clients escalate.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Catch delivery delays</h3>
+          <p>With PostHero, catch carrier delays before clients escalate.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Catch delivery delays</h3>
+          <p>With PostHero, spot carrier delays and stuck shipments before clients escalate.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Track delivery</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Catch delivery delays sooner</h3>
+          <p>With PostHero, spot carrier delays and stuck shipments before clients escalate.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="mobile-replenishment">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Mobile Replenishment</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/mobile-replenishment">/software/mobile-replenishment</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Pick bins run dry, teams rely on paper replenishment, and stock movement is not tracked in real time.</p>
+        <p><strong>Page takeaway:</strong> No printed reports, Excel sheets, or Post-its; real-time replenishment with multiple users and floor-level transfers.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Throughput</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Keep pick bins full</h3>
+          <p>With Mobile Replenishment, keep pick bins stocked.</p>
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Keep pick bins full</h3>
+          <p>With Mobile Replenishment, keep pick bins stocked so replenishment gaps do not stall 3X faster picking.</p>
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Keep pick bins full</h3>
+          <p>With Mobile Replenishment, keep pick bins stocked.</p>
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Keep pick bins full</h3>
+          <p>With Mobile Replenishment, keep pick bins stocked so replenishment gaps do not stall 3X faster picking.</p>
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Keep bins full</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Keep pick bins full</h3>
+          <p>With Mobile Replenishment, keep pick bins stocked so replenishment gaps do not stall 3X faster picking.</p>
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="parcelview">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>ParcelView</h2>
+        </div>
+        <a href="https://www.shiphero.com/parcelview">/parcelview</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Client support teams lose time answering where-is-my-order questions and tracing package issues.</p>
+        <p><strong>Page takeaway:</strong> End-to-end transparency at the click of a button; parcel-level visibility and shipment detail.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Shipment visibility</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Shipment detail fast</h3>
+          <p>With ParcelView, see parcel-level shipment detail.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Parcel-level visibility</h3>
+          <p>With ParcelView, give account teams parcel-level visibility and shipment detail from one place.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Shipment detail fast</h3>
+          <p>With ParcelView, see parcel-level shipment detail.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Shipment detail fast</h3>
+          <p>With ParcelView, give account teams parcel-level visibility and shipment detail from one place.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Parcel detail</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Parcel-level visibility</h3>
+          <p>With ParcelView, give account teams parcel-level visibility and shipment detail from one place.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="receiving-and-putaway">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Receiving &amp; Putaway</h2>
+        </div>
+        <a href="https://www.shiphero.com/putaway">/putaway</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Receiving mistakes become inventory errors, open locations live in memory, and putaway slows the floor.</p>
+        <p><strong>Page takeaway:</strong> Guesswork is gone; putaway in the mobile app finds the right place for new products and indicates replenishment priorities.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: SLA accuracy</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Improve receiving accuracy</h3>
+          <p>With Putaway, improve receiving accuracy.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve receiving accuracy</h3>
+          <p>With Putaway, guide teams to the right location before receiving mistakes become SLA issues.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve receiving accuracy</h3>
+          <p>With Putaway, improve receiving accuracy.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve receiving accuracy</h3>
+          <p>With Putaway, guide teams to the right location before receiving mistakes become SLA issues.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Receive right</h3>
+          
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve receiving accuracy</h3>
+          <p>With Putaway, guide teams to the right location before receiving mistakes become SLA issues.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="implementation">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Implementation</h2>
+        </div>
+        <a href="https://www.shiphero.com/implementation">/implementation</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> 3PL leaders fear messy migrations, weak training, and operational disruption during WMS change.</p>
+        <p><strong>Page takeaway:</strong> Proven client onboarding process: kickoff, discovery, fundamentals, warehouse prep, UAT, training, 4-6 week process.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Launch SLA</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Confident WMS switch</h3>
+          <p>Switch WMS with less migration risk.</p>
+        </div>
+        <button>See How It Works</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Confident WMS switch</h3>
+          <p>Plan data, carriers, training, and go-live before the first live order hits the floor.</p>
+        </div>
+        <button>See How It Works</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Confident WMS switch</h3>
+          <p>Switch WMS with less migration risk.</p>
+        </div>
+        <button>See How It Works</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Confident WMS switch</h3>
+          <p>Plan data, carriers, training, and go-live before the first live order hits the floor.</p>
+        </div>
+        <button>See How It Works</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Switch WMS</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Confident WMS switch</h3>
+          <p>Plan data, carriers, training, and go-live before the first live order hits the floor.</p>
+        </div>
+        <button>See How It Works</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="tap-to-pack">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Tap-to-Pack</h2>
+        </div>
+        <a href="https://www.shiphero.com/tap-to-pack">/tap-to-pack</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Small packing delays compound across thousands of orders and create avoidable labor cost.</p>
+        <p><strong>Page takeaway:</strong> Tap-to-Pack saves 8 sec/order, reduces pack time 19-30%, reduces screen interactions 90%, and maintains 99.9% fulfillment accuracy.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Pack SLA speed</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Reduce pack time 19-30%</h3>
+          <p>With Tap-to-Pack, reduce pack time 19-30%.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve pack speed 19-30%</h3>
+          <p>With Tap-to-Pack, remove repetitive pack clicks to reduce pack time 19-30% without sacrificing accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Reduce pack time 19-30%</h3>
+          <p>With Tap-to-Pack, reduce pack time 19-30%.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Reduce pack time 19-30%</h3>
+          <p>With Tap-to-Pack, remove repetitive pack clicks to reduce pack time 19-30% without sacrificing accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Pack faster</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve pack speed 19-30%</h3>
+          <p>With Tap-to-Pack, remove repetitive pack clicks to reduce pack time 19-30% without sacrificing accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="pick-to-light">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Pick-to-Light</h2>
+        </div>
+        <a href="https://www.shiphero.com/pick-to-light">/pick-to-light</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Picking mistakes, slow new-hire ramp, wasted walking, and peak-season accuracy pressure.</p>
+        <p><strong>Page takeaway:</strong> Guided by lights; increase efficiency by 20%, lower costs by 30%, train in 45 minutes, set up under 30 minutes.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Guided workflow</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>20% more efficient picks</h3>
+          <p>With Pick-to-Light, help peak teams pick 20% faster.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve pick efficiency 20%</h3>
+          <p>With Pick-to-Light, guide new and seasonal pickers so speed does not come at the cost of accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>20% more efficient picks</h3>
+          <p>With Pick-to-Light, help peak teams pick 20% faster.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>20% more efficient picks</h3>
+          <p>With Pick-to-Light, guide new and seasonal pickers so speed does not come at the cost of accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Pick right</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve pick efficiency 20%</h3>
+          <p>With Pick-to-Light, guide new and seasonal pickers so speed does not come at the cost of accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="pack-to-light">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Pack-to-Light</h2>
+        </div>
+        <a href="https://www.shiphero.com/pack-to-light">/pack-to-light</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Pack stations bottleneck, mistakes require rework, and teams need more throughput without more labor.</p>
+        <p><strong>Page takeaway:</strong> Boost output up to 450%; LED light bars guide totes and quantities, reducing errors and improving pick rates.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Pack throughput</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>450% faster packing</h3>
+          <p>With Pack-to-Light, clear pack bottlenecks.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Unblock packout at peak</h3>
+          <p>With Pack-to-Light, clear pack bottlenecks and boost output up to 450% without adding labor.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>450% faster packing</h3>
+          <p>With Pack-to-Light, clear pack bottlenecks.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>450% faster packing</h3>
+          <p>With Pack-to-Light, clear pack bottlenecks and boost output up to 450% without adding labor.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>450% faster</h3>
+          
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#111827; --accent:#38bdf8; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Unblock packout at peak</h3>
+          <p>With Pack-to-Light, clear pack bottlenecks and boost output up to 450% without adding labor.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="receive-to-light">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Receive-to-Light</h2>
+        </div>
+        <a href="https://www.shiphero.com/receive-to-light">/receive-to-light</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Bad receiving data causes oversells, incorrect fulfillment, and unhappy clients downstream.</p>
+        <p><strong>Page takeaway:</strong> Fix the first step; receiving is error-prone; LEDs eliminate mistakes, reduce sorting time, and keep inventory clean.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: SLA accuracy</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Fewer receiving mistakes</h3>
+          <p>With Receive-to-Light, improve inbound accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Eliminate inbound mistakes</h3>
+          <p>With Receive-to-Light, improve inbound accuracy before bad data causes wrong picks and oversells.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Fewer receiving mistakes</h3>
+          <p>With Receive-to-Light, improve inbound accuracy.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Fewer receiving mistakes</h3>
+          <p>With Receive-to-Light, improve inbound accuracy before bad data causes wrong picks and oversells.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Fewer mistakes</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Eliminate inbound mistakes</h3>
+          <p>With Receive-to-Light, improve inbound accuracy before bad data causes wrong picks and oversells.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="labor-management">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Labor Management</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/workforcehero">/software/workforcehero</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Leaders cannot see who is idle, where labor is deployed, or which jobs are leaking cost.</p>
+        <p><strong>Page takeaway:</strong> 360 degree real-time workforce view; assign, measure, optimize, live view, task pre-assignment, alerts, man-hours.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Visibility</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Improve labor visibility</h3>
+          <p>With WorkforceHero, catch labor leaks in real time.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve labor visibility in real time</h3>
+          <p>With WorkforceHero, see who is stuck, idle, or overloaded before labor leaks hit margin.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve labor visibility</h3>
+          <p>With WorkforceHero, catch labor leaks in real time.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve labor visibility</h3>
+          <p>With WorkforceHero, see who is stuck, idle, or overloaded before labor leaks hit margin.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Labor view</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Improve labor visibility in real time</h3>
+          <p>With WorkforceHero, see who is stuck, idle, or overloaded before labor leaks hit margin.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="ai-picking">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>AI Picking</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/ai-picking">/software/ai-picking</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Pickers spend too much time walking, batches are inefficient, and throughput is limited by travel time.</p>
+        <p><strong>Page takeaway:</strong> AI path optimization, smart batching, up to 33% travel-time savings, more picked per trip.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Pick SLA speed</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>33% less picker travel time</h3>
+          <p>With AI Picking, reduce picker travel time up to 33%.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Reduce travel time up to 33%</h3>
+          <p>With AI Picking, reduce travel time up to 33% so pickers spend less time walking and more time shipping.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>33% less picker travel time</h3>
+          <p>With AI Picking, reduce picker travel time up to 33%.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>33% less picker travel time</h3>
+          <p>With AI Picking, reduce travel time up to 33% so pickers spend less time walking and more time shipping.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Less walking</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Reduce travel time up to 33%</h3>
+          <p>With AI Picking, reduce travel time up to 33% so pickers spend less time walking and more time shipping.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="labor-cost-dashboard">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Labor Cost Dashboard</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/labor-cost-dashboard">/software/labor-cost-dashboard</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> 3PL executives do not know which clients, warehouses, or tasks are quietly eroding margin.</p>
+        <p><strong>Page takeaway:</strong> Granular labor-cost analysis by client, warehouse, task, average cost per order, time per order, daily insights.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Profitability</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Find labour margin leaks</h3>
+          <p>With Labor Cost Dashboard, find labour margin leaks by client.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Find hidden labour margin leaks</h3>
+          <p>With Labor Cost Dashboard, see cost by client so hidden labor leaks do not erode 3PL margin.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Find labour margin leaks</h3>
+          <p>With Labor Cost Dashboard, find labour margin leaks by client.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Find labour margin leaks</h3>
+          <p>With Labor Cost Dashboard, see cost by client so hidden labor leaks do not erode 3PL margin.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Labor costs</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#102019; --accent:#facc15; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Find hidden labour margin leaks</h3>
+          <p>With Labor Cost Dashboard, see cost by client so hidden labor leaks do not erode 3PL margin.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="picker-performance-dashboard">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Picker Performance Dashboard</h2>
+        </div>
+        <a href="https://www.shiphero.com/features/picker-performance-dashboard">/features/picker-performance-dashboard</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Simple leaderboards are unfair, coaching is subjective, and managers miss picker bottlenecks.</p>
+        <p><strong>Page takeaway:</strong> AI-backed scoring evaluates difficulty, not just picks per hour; 60+ variables, walking distance, item count, batch type.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Performance visibility</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Picker bottleneck visibility</h3>
+          <p>With Picker Dashboard, see picker bottlenecks.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Picker visibility</h3>
+          <p>With Picker Dashboard, see picker bottlenecks and rebalance labor before SLAs slip.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Picker bottleneck visibility</h3>
+          <p>With Picker Dashboard, see picker bottlenecks.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Picker bottleneck visibility</h3>
+          <p>With Picker Dashboard, see picker bottlenecks and rebalance labor before SLAs slip.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Picker visibility</h3>
+          
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Picker visibility</h3>
+          <p>With Picker Dashboard, see picker bottlenecks and rebalance labor before SLAs slip.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="packer-performance-dashboard">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Packer Performance Dashboard</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/packer-performance-dashboard">/software/packer-performance-dashboard</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Packing performance is judged by averages and opinions instead of real order complexity.</p>
+        <p><strong>Page takeaway:</strong> Measures complexity, expected vs actual pack time, scans, labels, materials, handling; helps hire and retain smarter.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Performance visibility</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Pack performance visibility</h3>
+          <p>With Packer Dashboard, see pack complexity.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Pack visibility</h3>
+          <p>With Packer Dashboard, compare pack performance by order complexity instead of blunt averages.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Pack performance visibility</h3>
+          <p>With Packer Dashboard, see pack complexity.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Pack performance visibility</h3>
+          <p>With Packer Dashboard, compare pack performance by order complexity instead of blunt averages.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Pack visibility</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#0f172a; --accent:#a7f3d0; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Pack visibility</h3>
+          <p>With Packer Dashboard, compare pack performance by order complexity instead of blunt averages.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="3pl-client-portal">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>3PL Client Portal</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/3pl-client-portal">/software/3pl-client-portal</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Clients ask for order updates, inventory reports, inbound plans, and returns status that drain ops time.</p>
+        <p><strong>Page takeaway:</strong> White-label portal with self-service shipping plans, inventory, orders, returns, reporting, support.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: White-label control</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>White-label 3PL portal</h3>
+          <p>With Client Portal, give clients full visibility.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>White-label portal. Full control.</h3>
+          <p>With Client Portal, give clients a white-label 3PL portal while your team keeps full control.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>White-label 3PL portal</h3>
+          <p>With Client Portal, give clients full visibility.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>White-label 3PL portal</h3>
+          <p>With Client Portal, give clients a white-label 3PL portal while your team keeps full control.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>3PL portal</h3>
+          
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>White-label portal. Full control.</h3>
+          <p>With Client Portal, give clients a white-label 3PL portal while your team keeps full control.</p>
+        </div>
+        <button>Book a Demo</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+    <section class="feature-section" id="work-orders">
+      <div class="feature-head">
+        <div>
+          <p class="eyebrow">Warehouse Management Software</p>
+          <h2>Work Orders</h2>
+        </div>
+        <a href="https://www.shiphero.com/software/work-orders">/software/work-orders</a>
+      </div>
+      <div class="brief">
+        <p><strong>ICP pain:</strong> Customer accounts need an easy way to request, monitor, and supply instructions for special 3PL work without back-and-forth.</p>
+        <p><strong>Page takeaway:</strong> Submit and monitor work orders, attach images/videos/docs, track every step, pre-kit assembly, FBA, bill by units/hours.</p>
+        <p><strong>Evidence used:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      
+      <div class="variation-block">
+        <div class="variation-title">Selected strongest variation: Customer self-service</div>
+        <div class="banner-grid">
+          
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Leaderboard</strong>
+        <span>728 x 90</span>
+        <span>V1</span>
+      </div>
+      <div class="banner leaderboard" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Self-service work orders</h3>
+          <p>With Work Orders, give accounts self-service.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Half Page</strong>
+        <span>300 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner half-page" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Customer self-service work orders</h3>
+          <p>With Work Orders, let customer accounts submit, track, and manage special project requests.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Medium Rectangle</strong>
+        <span>300 x 250</span>
+        <span>V1</span>
+      </div>
+      <div class="banner medium-rectangle" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Self-service work orders</h3>
+          <p>With Work Orders, give accounts self-service.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Landscape Rectangle</strong>
+        <span>480 x 320</span>
+        <span>V1</span>
+      </div>
+      <div class="banner landscape-rectangle" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Self-service work orders</h3>
+          <p>With Work Orders, let customer accounts submit, track, and manage special project requests.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Mobile Leaderboard</strong>
+        <span>320 x 50</span>
+        <span>V1</span>
+      </div>
+      <div class="banner mobile-leaderboard" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          
+          <h3>Self-service</h3>
+          
+        </div>
+        <button>See it Live</button>
+      </div>
+    </article>
+    <article class="banner-shell">
+      <div class="banner-meta">
+        <strong>Wide Skyscraper</strong>
+        <span>160 x 600</span>
+        <span>V1</span>
+      </div>
+      <div class="banner wide-skyscraper" style="--bg:#172554; --accent:#f97316; --ink:#f8fafc;">
+        <div class="brand"><span class="mark">S</span><span>shiphero</span></div>
+        <div class="copy">
+          <span class="proof">WMS built for 3PLs</span>
+          <h3>Customer self-service work orders</h3>
+          <p>With Work Orders, let customer accounts submit, track, and manage special project requests.</p>
+        </div>
+        <button>See the Software</button>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Credentials - NEVER commit these
+.env
+.env.*
+.env.google-ads
+.mcp.json
+credentials.json
+scripts/credentials.json
+scripts/oauth_client.json
+oauth_client.json
+client_secret*.json
+*_credentials.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc

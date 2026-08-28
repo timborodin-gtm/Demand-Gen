@@ -1,0 +1,81 @@
+{
+  "elements": [
+    {
+      "account": "urn:li:sponsoredAccount:999",
+      "associatedEntity": "urn:li:organization:2414183",
+      "audienceExpansionEnabled": false,
+      "campaignGroup": "urn:li:sponsoredCampaignGroup:321",
+      "changeAuditStamps": {
+        "created": {
+          "time": 1714567200000
+        },
+        "lastModified": {
+          "time": 1717249200000
+        }
+      },
+      "costType": "CPC",
+      "creativeSelection": "OPTIMIZED",
+      "dailyBudget": {
+        "amount": "100",
+        "currencyCode": "USD"
+      },
+      "id": 123,
+      "locale": {
+        "country": "US",
+        "language": "en"
+      },
+      "name": "Pipeline Quality - CFO Pain",
+      "objectiveType": "LEAD_GENERATION",
+      "offsiteDeliveryEnabled": false,
+      "runSchedule": {
+        "start": 1714567200000
+      },
+      "servingStatuses": [
+        "RUNNABLE"
+      ],
+      "status": "ACTIVE",
+      "type": "SPONSORED_UPDATES"
+    },
+    {
+      "account": "urn:li:sponsoredAccount:999",
+      "associatedEntity": "urn:li:organization:2414183",
+      "audienceExpansionEnabled": true,
+      "campaignGroup": "urn:li:sponsoredCampaignGroup:321",
+      "changeAuditStamps": {
+        "created": {
+          "time": 1714567200000
+        },
+        "lastModified": {
+          "time": 1717249200000
+        }
+      },
+      "costType": "CPC",
+      "creativeSelection": "OPTIMIZED",
+      "dailyBudget": {
+        "amount": "150",
+        "currencyCode": "USD"
+      },
+      "id": 124,
+      "locale": {
+        "country": "US",
+        "language": "en"
+      },
+      "name": "Generic Demo Request",
+      "objectiveType": "LEAD_GENERATION",
+      "offsiteDeliveryEnabled": false,
+      "runSchedule": {
+        "start": 1714567200000
+      },
+      "servingStatuses": [
+        "RUNNABLE"
+      ],
+      "status": "ACTIVE",
+      "type": "SPONSORED_UPDATES"
+    }
+  ],
+  "paging": {
+    "count": 100,
+    "start": 0,
+    "total": 2
+  }
+}

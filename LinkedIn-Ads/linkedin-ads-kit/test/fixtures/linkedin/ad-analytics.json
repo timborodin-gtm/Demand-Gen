@@ -1,0 +1,53 @@
+{
+  "elements": [
+    {
+      "clicks": 42,
+      "costInLocalCurrency": "840.00",
+      "dateRange": {
+        "end": {
+          "day": 31,
+          "month": 3,
+          "year": 2026
+        },
+        "start": {
+          "day": 1,
+          "month": 3,
+          "year": 2026
+        }
+      },
+      "externalWebsiteConversions": 0,
+      "impressions": 6200,
+      "oneClickLeads": 3,
+      "pivotValues": [
+        "urn:li:sponsoredCampaign:123"
+      ]
+    },
+    {
+      "clicks": 20,
+      "costInLocalCurrency": "300.00",
+      "dateRange": {
+        "end": {
+          "day": 31,
+          "month": 3,
+          "year": 2026
+        },
+        "start": {
+          "day": 1,
+          "month": 3,
+          "year": 2026
+        }
+      },
+      "externalWebsiteConversions": 0,
+      "impressions": 5100,
+      "oneClickLeads": 0,
+      "pivotValues": [
+        "urn:li:sponsoredCampaign:124"
+      ]
+    }
+  ],
+  "paging": {
+    "count": 100,
+    "start": 0,
+    "total": 2
+  }
+}

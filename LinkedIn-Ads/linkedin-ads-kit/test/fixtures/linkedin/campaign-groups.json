@@ -1,0 +1,39 @@
+{
+  "elements": [
+    {
+      "account": "urn:li:sponsoredAccount:999",
+      "allowedCampaignTypes": [
+        "SPONSORED_UPDATES",
+        "TEXT_AD"
+      ],
+      "backfilled": false,
+      "changeAuditStamps": {
+        "created": {
+          "time": 1714480800000
+        },
+        "lastModified": {
+          "time": 1717162800000
+        }
+      },
+      "id": 321,
+      "name": "Pipeline Quality Tests",
+      "runSchedule": {
+        "start": 1714480800000
+      },
+      "servingStatuses": [
+        "RUNNABLE"
+      ],
+      "status": "ACTIVE",
+      "test": false,
+      "totalBudget": {
+        "amount": "12000",
+        "currencyCode": "USD"
+      }
+    }
+  ],
+  "paging": {
+    "count": 100,
+    "start": 0,
+    "total": 1
+  }
+}

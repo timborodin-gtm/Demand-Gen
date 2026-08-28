@@ -1,0 +1,30 @@
+{
+  "elements": [
+    {
+      "test": false,
+      "changeAuditStamps": {
+        "created": {
+          "time": 1714480800000
+        },
+        "lastModified": {
+          "time": 1717162800000
+        }
+      },
+      "currency": "USD",
+      "id": 999,
+      "name": "Acme Pipeline Ads",
+      "notifiedOnCampaignOptimization": true,
+      "notifiedOnCreativeApproval": true,
+      "notifiedOnCreativeRejection": true,
+      "notifiedOnEndOfCampaign": true,
+      "reference": "urn:li:organization:2414183",
+      "status": "ACTIVE",
+      "type": "BUSINESS"
+    }
+  ],
+  "paging": {
+    "count": 100,
+    "start": 0,
+    "total": 1
+  }
+}

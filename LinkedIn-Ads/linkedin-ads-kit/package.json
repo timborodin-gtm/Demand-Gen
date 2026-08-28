@@ -1,0 +1,34 @@
+{
+  "name": "linkedin-ads-kit",
+  "version": "0.1.0",
+  "description": "A file-first LinkedIn Ads operator kit for buyer-quality audits, API-backed briefs, safe drafts, and Thought Leader Ads workflows.",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "linkedin-ads-kit": "./bin/linkedin-ads-kit.js"
+  },
+  "scripts": {
+    "doctor": "node bin/linkedin-ads-kit.js doctor",
+    "auth": "node bin/linkedin-ads-kit.js auth",
+    "brand:init": "node bin/linkedin-ads-kit.js brand:init",
+    "export:brief": "node bin/linkedin-ads-kit.js export:brief",
+    "connected:brief": "node bin/linkedin-ads-kit.js connected:brief",
+    "daily:brief": "node bin/linkedin-ads-kit.js daily:brief",
+    "daily-check": "node bin/linkedin-ads-kit.js daily-check",
+    "draft": "node bin/linkedin-ads-kit.js draft",
+    "apply": "node bin/linkedin-ads-kit.js apply",
+    "demo": "node bin/linkedin-ads-kit.js demo",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "linkedin-ads",
+    "marketing-api",
+    "claude-code",
+    "ads-automation",
+    "thought-leader-ads"
+  ],
+  "license": "MIT"
+}

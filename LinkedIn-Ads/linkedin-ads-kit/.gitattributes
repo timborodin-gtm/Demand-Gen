@@ -1,0 +1,14 @@
+# Exclude these paths from `git archive` output (the release bundle).
+# Keep this aligned with RELEASE-BUNDLE.md "should not include" list.
+
+.env              export-ignore
+.env.local        export-ignore
+.env.*.local      export-ignore
+workspace/brand/  export-ignore
+workspace/brands/ export-ignore
+test/             export-ignore
+.github/          export-ignore
+dist/             export-ignore
+node_modules/     export-ignore
+.gitattributes    export-ignore
+.DS_Store         export-ignore

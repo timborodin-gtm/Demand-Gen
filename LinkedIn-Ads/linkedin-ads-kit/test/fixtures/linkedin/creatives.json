@@ -1,0 +1,31 @@
+{
+  "elements": [
+    {
+      "campaign": "urn:li:sponsoredCampaign:123",
+      "content": {
+        "reference": "urn:li:ugcPost:7350000000000000123"
+      },
+      "id": "urn:li:sponsoredCreative:456",
+      "intendedStatus": "ACTIVE",
+      "servingStatuses": [
+        "RUNNABLE"
+      ]
+    },
+    {
+      "campaign": "urn:li:sponsoredCampaign:124",
+      "content": {
+        "reference": "urn:li:share:7350000000000000124"
+      },
+      "id": "urn:li:sponsoredCreative:457",
+      "intendedStatus": "ACTIVE",
+      "servingStatuses": [
+        "RUNNABLE"
+      ]
+    }
+  ],
+  "paging": {
+    "count": 100,
+    "start": 0,
+    "total": 2
+  }
+}

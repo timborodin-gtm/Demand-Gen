@@ -1,0 +1,9 @@
+{
+  "linkedinAdAccountId": "",
+  "linkedinAdAccountUrn": "",
+  "targetCpl": 250,
+  "targetCostPerQualifiedLead": 900,
+  "targetPipelineStage": "sales accepted lead",
+  "crm": "HubSpot",
+  "notes": "Example brand template for demos."
+}

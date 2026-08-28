@@ -1,0 +1,13 @@
+node_modules/
+.env
+.DS_Store
+coverage/
+dist/
+.claude/
+
+# Keep client/brand data local by default.
+workspace/brand/**
+workspace/brands/**
+!workspace/brand/.gitkeep
+!workspace/brands/.gitkeep
+!workspace/README.md

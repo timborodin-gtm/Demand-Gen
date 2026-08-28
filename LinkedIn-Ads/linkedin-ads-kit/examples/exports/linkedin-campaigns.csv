@@ -1,0 +1,11 @@
+Campaign Name,Campaign URN,Status,Daily Budget,Currency,Impressions,Clicks,CTR,Spend,Leads,Conversions
+Founder POV - Pipeline Quality,urn:li:sponsoredCampaign:1001,ACTIVE,150,USD,42000,310,0.74%,1800,18,4
+Generic Demo Request,urn:li:sponsoredCampaign:1002,ACTIVE,200,USD,39000,468,1.20%,2400,0,0
+Thought Leader Test - CFO Pain,urn:li:sponsoredCampaign:1003,ACTIVE,75,USD,16000,180,1.13%,650,12,8
+Company Page Trust Gap,urn:li:sponsoredCampaign:1004,ACTIVE,180,USD,88000,150,0.17%,1950,2,0
+Handoff Leak - Revenue Ops Form,urn:li:sponsoredCampaign:1005,ACTIVE,120,USD,31000,242,0.78%,1480,22,1
+Retargeting - Pricing Page,urn:li:sponsoredCampaign:1006,ACTIVE,60,USD,9000,75,0.83%,540,5,2
+Lookalike Seed - Won Customers,urn:li:sponsoredCampaign:1007,ACTIVE,90,USD,21000,130,0.62%,920,9,3
+New Creative Test - Week One,urn:li:sponsoredCampaign:1008,ACTIVE,50,USD,1800,10,0.56%,85,0,0
+ICP Expansion - Manufacturing,urn:li:sponsoredCampaign:1009,PAUSED,125,USD,12000,60,0.50%,680,2,0
+CFO Pain - Video Hook Test,urn:li:sponsoredCampaign:1010,ACTIVE,80,USD,18500,172,0.93%,720,8,3

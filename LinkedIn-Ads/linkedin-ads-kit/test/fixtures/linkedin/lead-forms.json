@@ -1,0 +1,43 @@
+{
+  "elements": [
+    {
+      "content": {
+        "name": "Pipeline Quality Audit Form",
+        "questions": [
+          {
+            "questionId": 1,
+            "question": {
+              "localized": {
+                "en_US": "What CRM do you use?"
+              }
+            }
+          },
+          {
+            "questionId": 2,
+            "question": {
+              "localized": {
+                "en_US": "What makes a LinkedIn lead qualified for sales?"
+              }
+            }
+          }
+        ]
+      },
+      "createdAt": 1714567200000,
+      "id": "urn:li:leadGenForm:3162",
+      "lastModifiedAt": 1717249200000,
+      "owner": {
+        "sponsoredAccount": "urn:li:sponsoredAccount:999"
+      },
+      "reviewInfo": {
+        "status": "APPROVED"
+      },
+      "status": "ACTIVE",
+      "versionedLeadGenFormUrn": "urn:li:versionedLeadGenForm:(urn:li:leadGenForm:3162,1)"
+    }
+  ],
+  "paging": {
+    "count": 100,
+    "start": 0,
+    "total": 1
+  }
+}

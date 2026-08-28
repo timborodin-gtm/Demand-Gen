@@ -1,0 +1,21 @@
+Lead ID,Campaign,CRM Stage,Sales Owner,Sales Notes,Deal Amount
+L-001,Founder POV - Pipeline Quality,Sales Accepted,Tomas R.,Good ICP fit. Asked smart questions about attribution. Booking a diagnostic next week.,
+L-002,Founder POV - Pipeline Quality,Sales Accepted,Priya K.,VP says their current MQL-to-SQL rate is under 8 percent. Solid discovery call scheduled.,
+L-003,Thought Leader Test - CFO Pain,Opportunity,Tomas R.,CFO already ran procurement review. Confirmed budget owner. Sending proposal Friday.,75000
+L-004,Thought Leader Test - CFO Pain,Opportunity,Priya K.,VP RevOps brought their CFO into call two. Clear pain around attribution across tools.,45000
+L-005,Thought Leader Test - CFO Pain,Sales Accepted,Dana M.,Head of Marketing lit up at the CFO framing. Wants to pilot Q3.,
+L-006,Thought Leader Test - CFO Pain,Sales Accepted,Tomas R.,Fit on paper. Needs to loop in VP Marketing before next step.,
+L-007,Founder POV - Pipeline Quality,Nurture,Priya K.,Director of Growth is strong ICP but not in buying window. Adding to nurture.,
+L-008,Generic Demo Request,Disqualified,Priya K.,Student research project. Not a buyer.,
+L-009,Generic Demo Request,Disqualified,Tomas R.,Agency looking for tools for their clients. Not our ICP.,
+L-010,Generic Demo Request,Disqualified,Dana M.,Tiny dev shop. No budget. No authority. Junk.,
+L-011,Generic Demo Request,Disqualified,Priya K.,Solo consultant just curious. No fit.,
+L-012,Generic Demo Request,Bad Fit,Dana M.,Company size fits but their paid program is under 5k per month. Too small.,
+L-013,Lookalike Seed - Won Customers,Sales Accepted,Tomas R.,Enterprise VP. Strong pipeline attribution pain. Confirmed mutual NDA step.,
+L-014,Retargeting - Pricing Page,Opportunity,Priya K.,Returning warm lead. Second pricing page visit. Ready for proposal.,32000
+L-015,Handoff Leak - Revenue Ops Form,Sales Accepted,Dana M.,Good ICP but no context on which ad they saw. Had to re-discover pain.,
+L-016,Handoff Leak - Revenue Ops Form,Nurture,Tomas R.,Fit but rep spent the whole call figuring out what the prospect had read.,
+L-017,Handoff Leak - Revenue Ops Form,Bad Fit,Priya K.,No context passed from ad. Prospect expected a different conversation.,
+L-018,Generic Demo Request,Disqualified,Dana M.,Competitor research. Flagged as spam-tier lead.,
+L-019,CFO Pain - Video Hook Test,Sales Accepted,Priya K.,Director admits CFO has been asking hard ROI questions. Multi-thread play.,
+L-020,CFO Pain - Video Hook Test,Opportunity,Tomas R.,VP Finance agreed to a joint call with marketing. Rare for paid LinkedIn.,58000

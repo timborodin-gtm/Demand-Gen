@@ -1,0 +1,6 @@
+{
+  "code": "ACCESS_DENIED",
+  "message": "The authenticated member does not have Lead Sync access for this sponsored account.",
+  "serviceErrorCode": 100,
+  "status": 403
+}
